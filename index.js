@@ -11,7 +11,7 @@ const app = express();
 // Configure middlewares with open CORS
 app.use(
   cors({
-    origin: "*",  // This allows all origins
+    origin: "*", // This allows all origins
     credentials: true,
   })
 );
@@ -19,8 +19,8 @@ app.use(
 app.use(express.json());
 
 const authLimiter = rateLimit({
-  windowMs: 15 * 60 * 1000, 
-  max: 100, 
+  windowMs: 15 * 60 * 1000,
+  max: 100,
   message: "Too many requests, please try again later.",
 });
 
@@ -47,10 +47,8 @@ const connectDB = async () => {
   }
 };
 
-// Modify your server setup code to:
 const PORT = process.env.PORT || 5000;
 
-// Remove the production check and always start the server
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
