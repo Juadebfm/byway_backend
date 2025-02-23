@@ -47,13 +47,13 @@ const connectDB = async () => {
   }
 };
 
-// For local development
-if (process.env.NODE_ENV !== 'production') {
-  const PORT = process.env.PORT || 5000;
-  app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
-  });
-}
+// Modify your server setup code to:
+const PORT = process.env.PORT || 5000;
+
+// Remove the production check and always start the server
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
 
 // Connect to database
 connectDB();
