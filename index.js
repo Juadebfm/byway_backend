@@ -19,8 +19,8 @@ app.use(
 app.use(express.json());
 
 const authLimiter = rateLimit({
-  windowMs: 15 * 60 * 1000,
-  max: 100,
+  windowMs: 15 * 60 * 1000, 
+  max: 100, 
   message: "Too many requests, please try again later.",
 });
 
@@ -49,9 +49,10 @@ const connectDB = async () => {
 
 const PORT = process.env.PORT || 5000;
 
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
+
+  app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+  });
 
 // Connect to database
 connectDB();
